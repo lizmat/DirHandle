@@ -50,7 +50,7 @@ DirHandle - Port of Perl 5's DirHandle
     with Dirhandle.new(".") -> $d {
         while $d.read -> $entry { something($entry) }
         $d->rewind;
-        while $d.read(:void) { something_else($_) }
+        while $d.read(Mu) { something_else($_) }
         $d.close;
     }
 
