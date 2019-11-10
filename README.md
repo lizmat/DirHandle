@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/lizmat/DirHandle.svg?branch=master)](https://travis-ci.org/lizmat/DirHandle)
-
 NAME
 ====
 
-DirHandle - Port of Perl 5's DirHandle
+DirHandle - Port of Perl's DirHandle
 
 SYNOPSIS
 ========
@@ -12,7 +10,7 @@ SYNOPSIS
     with Dirhandle.new(".") -> $d {
         while $d.read -> $entry { something($entry) }
         $d->rewind;
-        while $d.read(:void) { something_else($_) }
+        while $d.read(Mu) { something_else($_) }
         $d.close;
     }
 
@@ -26,9 +24,9 @@ The only objective benefit to using DirHandle is that it avoids namespace pollut
 PORTING CAVEATS
 ===============
 
-Since Perl 6 does not have a concept like void context, one needs to specify `Mu` as the only positional parameter with `read` to mimic the behaviour of `DirHandle.read` of Perl 5 in void context.
+Since Raku does not have a concept like void context, one needs to specify `Mu` as the only positional parameter with `read` to mimic the behaviour of `DirHandle.read` of Perl in void context.
 
-The Perl 5 version of `DirHandle` for some mysterious reason does not contain methods for performing a `telldir` or a `seekdir`. The Perl 6 version **does** contain equivalent methods `tell` and `seek`.
+The Perl version of `DirHandle` for some mysterious reason does not contain methods for performing a `telldir` or a `seekdir`. The Raku version **does** contain equivalent methods `tell` and `seek`.
 
 AUTHOR
 ======
@@ -42,7 +40,7 @@ COPYRIGHT AND LICENSE
 
 Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

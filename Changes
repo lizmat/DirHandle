@@ -2,6 +2,9 @@ Revision history for DirHandle
 
 {{$NEXT}}
 
+0.0.3  2019-11-10T13:21:22+01:00
+    - changed Perl 6 to Raku, and Perl 5 to Perl
+
 0.0.2  2019-03-17T15:29:05+01:00
     - Tighten dependencies to specific versions
     - Deprecate :scalar in favour of Scalar as first positional

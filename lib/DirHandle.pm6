@@ -1,8 +1,8 @@
 use v6.c;
 
-use P5opendir:ver<0.0.4>:auth<cpan:ELIZABETH>;
+use P5opendir:ver<0.0.5>:auth<cpan:ELIZABETH>;
 
-class DirHandle:ver<0.0.2>:auth<cpan:ELIZABETH> {
+class DirHandle:ver<0.0.3>:auth<cpan:ELIZABETH> {
     has $.dirhandle;
 
     method new($path) {
@@ -42,7 +42,7 @@ class DirHandle:ver<0.0.2>:auth<cpan:ELIZABETH> {
 
 =head1 NAME
 
-DirHandle - Port of Perl 5's DirHandle
+DirHandle - Port of Perl's DirHandle
 
 =head1 SYNOPSIS
 
@@ -64,12 +64,12 @@ pollution.
 
 =head1 PORTING CAVEATS
 
-Since Perl 6 does not have a concept like void context, one needs to specify
+Since Raku does not have a concept like void context, one needs to specify
 C<Mu> as the only positional parameter with C<read> to mimic the behaviour of
-C<DirHandle.read> of Perl 5 in void context.
+C<DirHandle.read> of Perl in void context.
 
-The Perl 5 version of C<DirHandle> for some mysterious reason does not
-contain methods for performing a C<telldir> or a C<seekdir>.  The Perl 6
+The Perl version of C<DirHandle> for some mysterious reason does not
+contain methods for performing a C<telldir> or a C<seekdir>.  The Raku
 version B<does> contain equivalent methods C<tell> and C<seek>.
 
 =head1 AUTHOR
@@ -83,7 +83,7 @@ and Pull Requests are welcome.
 
 Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
