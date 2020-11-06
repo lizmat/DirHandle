@@ -29,4 +29,4 @@ jobs:
       - name: Show Version
         run: raku --version
       - name: Run Tests
-        run: raku -Ilib t/01-basic.t
+        run: raku -Ilib t/01-basic.t && raku -Ilib t/opendir.t
