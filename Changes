@@ -2,6 +2,12 @@ Revision history for DirHandle
 
 {{$NEXT}}
 
+0.0.5  2020-11-12T13:38:09+01:00
+    - Change name of distribution
+    - Force to highest possible Raku version
+    - Update copyright year
+    - Added mention of difference in handling of $_
+
 0.0.3  2019-11-10T13:21:22+01:00
     - changed Perl 6 to Raku, and Perl 5 to Perl
 

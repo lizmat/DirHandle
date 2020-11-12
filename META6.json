@@ -1,25 +1,28 @@
 {
-  "auth" : "cpan:ELIZABETH",
-  "authors" : [
+  "auth": "cpan:ELIZABETH",
+  "authors": [
     "Elizabeth Mattijsen"
   ],
-  "build-depends" : [ ],
-  "depends" : [
+  "build-depends": [
+  ],
+  "depends": [
     "P5opendir:ver<0.0.5>:auth<cpan:ELIZABETH>"
   ],
-  "description" : "Port of Perl's DirHandle",
-  "license" : "Artistic-2.0",
-  "name" : "DirHandle",
-  "perl" : "6.c",
-  "provides" : {
-    "DirHandle" : "lib/DirHandle.pm6"
+  "description": "Raku port of Perl's DirHandle",
+  "license": "Artistic-2.0",
+  "name": "DirHandle",
+  "perl": "6.c",
+  "provides": {
+    "DirHandle": "lib/DirHandle.pm6"
   },
-  "resources" : [ ],
-  "source-url" : "https://github.com/lizmat/DirHandle.git",
-  "tags" : [
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/DirHandle.git",
+  "tags": [
     "UTILS",
     "CPAN5"
   ],
-  "test-depends" : [ ],
-  "version" : "0.0.3"
+  "test-depends": [
+  ],
+  "version": "0.0.5"
 }

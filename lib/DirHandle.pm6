@@ -1,8 +1,8 @@
-use v6.c;
+use v6.d;
 
-use P5opendir:ver<0.0.5>:auth<cpan:ELIZABETH>;
+use P5opendir:ver<0.0.6>:auth<cpan:ELIZABETH>;
 
-class DirHandle:ver<0.0.3>:auth<cpan:ELIZABETH> {
+class DirHandle:ver<0.0.5>:auth<cpan:ELIZABETH> {
     has $.dirhandle;
 
     method new($path) {
@@ -42,7 +42,7 @@ class DirHandle:ver<0.0.3>:auth<cpan:ELIZABETH> {
 
 =head1 NAME
 
-DirHandle - Port of Perl's DirHandle
+Raku port of Perl's DirHandle module
 
 =head1 SYNOPSIS
 
@@ -56,6 +56,9 @@ DirHandle - Port of Perl's DirHandle
 
 =head1 DESCRIPTION
 
+This module tries to mimic the behaviour of Perl's C<DirHandle> module
+as closely as possible in the Raku Programming Language.
+
 The DirHandle object provides an alternative interface to the C<opendir>,
 C<closedir>, C<readdir>, C<telldir>, C<seekdir> and C<rewinddir> functions.
 
@@ -64,9 +67,18 @@ pollution.
 
 =head1 PORTING CAVEATS
 
+=head2 Handling void context
+
 Since Raku does not have a concept like void context, one needs to specify
-C<Mu> as the only positional parameter with C<read> to mimic the behaviour of
-C<DirHandle.read> of Perl in void context.
+C<Mu> as the only positional parameter with C<read> to mimic the behaviour
+of C<DirHandle.read> of Perl in void context.
+
+Please note that due to optimizations in Raku from version C<6.d> onwards,
+it is no longer possible to (always) assign to C<$_> in the caller's
+scope.  So this either locks your code into C<6.c>, or you will need to
+change your code to do explicit assignment with the C<read> method.
+
+=head2 Extra methods
 
 The Perl version of C<DirHandle> for some mysterious reason does not
 contain methods for performing a C<telldir> or a C<seekdir>.  The Raku
@@ -81,7 +93,7 @@ and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
@@ -89,4 +101,4 @@ This library is free software; you can redistribute it and/or modify it under th
 
 =end pod
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

@@ -31,4 +31,4 @@ is @entries.sort, $expected, 'did we get all entries';
 is $dh.tell, 4, 'did the telldir work';
 ok $dh.close, 'did the closedir work';
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

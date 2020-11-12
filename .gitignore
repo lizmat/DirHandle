@@ -7,3 +7,4 @@
 .precomp/
 /releases/
 /DirHandle-*
+/lib/P5opendir.pm6

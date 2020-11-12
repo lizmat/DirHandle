@@ -1,7 +1,7 @@
 NAME
 ====
 
-DirHandle - Port of Perl's DirHandle
+Raku port of Perl's DirHandle module
 
 SYNOPSIS
 ========
@@ -17,6 +17,8 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
+This module tries to mimic the behaviour of Perl's `DirHandle` module as closely as possible in the Raku Programming Language.
+
 The DirHandle object provides an alternative interface to the `opendir`, `closedir`, `readdir`, `telldir`, `seekdir` and `rewinddir` functions.
 
 The only objective benefit to using DirHandle is that it avoids namespace pollution.
@@ -24,7 +26,15 @@ The only objective benefit to using DirHandle is that it avoids namespace pollut
 PORTING CAVEATS
 ===============
 
+Handling void context
+---------------------
+
 Since Raku does not have a concept like void context, one needs to specify `Mu` as the only positional parameter with `read` to mimic the behaviour of `DirHandle.read` of Perl in void context.
+
+Please note that due to optimizations in Raku from version `6.d` onwards, it is no longer possible to (always) assign to `$_` in the caller's scope. So this either locks your code into `6.c`, or you will need to change your code to do explicit assignment with the `read` method.
+
+Extra methods
+-------------
 
 The Perl version of `DirHandle` for some mysterious reason does not contain methods for performing a `telldir` or a `seekdir`. The Raku version **does** contain equivalent methods `tell` and `seek`.
 
@@ -38,7 +48,7 @@ Source can be located at: https://github.com/lizmat/DirHandle . Comments and Pul
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
