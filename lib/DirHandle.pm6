@@ -2,7 +2,7 @@ use v6.d;
 
 use P5opendir:ver<0.0.6>:auth<cpan:ELIZABETH>;
 
-class DirHandle:ver<0.0.5>:auth<cpan:ELIZABETH> {
+class DirHandle:ver<0.0.6>:auth<cpan:ELIZABETH> {
     has $.dirhandle;
 
     method new($path) {

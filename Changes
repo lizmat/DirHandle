@@ -2,6 +2,9 @@ Revision history for DirHandle
 
 {{$NEXT}}
 
+0.0.6  2020-11-12T13:48:07+01:00
+    - Update version of P5opendir dependency
+
 0.0.5  2020-11-12T13:38:09+01:00
     - Change name of distribution
     - Force to highest possible Raku version
