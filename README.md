@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/lizmat/DirHandle/workflows/test/badge.svg)](https://github.com/lizmat/DirHandle/actions)
+
 NAME
 ====
 
@@ -41,14 +43,14 @@ The Perl version of `DirHandle` for some mysterious reason does not contain meth
 AUTHOR
 ======
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/DirHandle . Comments and Pull Requests are welcome.
 
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

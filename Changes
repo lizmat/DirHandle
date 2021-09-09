@@ -2,6 +2,13 @@ Revision history for DirHandle
 
 {{$NEXT}}
 
+0.0.7  2021-09-09T19:21:05+02:00
+    - Change file extension to .rakumod
+    - Migrate to zef ecosystem
+    - Update email address
+    - Update copyright year
+    - Update dependency
+
 0.0.6  2020-11-12T13:48:07+01:00
     - Update version of P5opendir dependency
 
