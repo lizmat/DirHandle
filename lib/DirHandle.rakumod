@@ -1,8 +1,8 @@
 use v6.d;
 
-use P5opendir:ver<0.0.7>:auth<zef:lizmat>;
+use P5opendir:ver<0.0.8>:auth<zef:lizmat>;
 
-class DirHandle:ver<0.0.7>:auth<zef:lizmat> {
+class DirHandle {
     has $.dirhandle;
 
     method new($path) {
@@ -22,12 +22,7 @@ class DirHandle:ver<0.0.7>:auth<zef:lizmat> {
     }
 
     multi method read(Mu:U) {
-        CALLERS::<$_> = readdir(Scalar, $!dirhandle)
-    }
-    multi method read(:$void!)
-        is DEPRECATED('Mu as first positional')
-    {
-        CALLERS::<$_> = readdir(Scalar, $!dirhandle)
+        CALLER::LEXICAL::<$_> = readdir(Scalar, $!dirhandle)
     }
     multi method read() { readdir(Scalar, $!dirhandle) }
 
@@ -88,12 +83,16 @@ version B<does> contain equivalent methods C<tell> and C<seek>.
 
 Elizabeth Mattijsen <liz@raku.rocks>
 
+If you like this module, or what I’m doing more generally, committing to a
+L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
+deal to me!
+
 Source can be located at: https://github.com/lizmat/DirHandle . Comments
 and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021, 2023 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

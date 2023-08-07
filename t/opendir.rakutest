@@ -1,7 +1,6 @@
 use v6.c;
 use Test;
 use DirHandle;
-%*ENV<RAKUDO_NO_DEPRECATIONS> = True;
 
 plan 11;
 
@@ -15,12 +14,12 @@ my @files;
 @files.push($dh.read) for ^4;
 is $dh.read, Nil, 'end reached';
 
-my $expected = '. .. 01-basic.t opendir.t';
+my $expected = '. .. 01-basic.rakutest opendir.rakutest';
 is @files.sort, $expected, 'did we get all entries';
 
 ok $dh.rewind, 'did the rewind work';
 my @entries;
-@entries.push($_) while $dh.read(:void);
+@entries.push($_) while $dh.read(Mu);
 is @entries.sort, $expected, 'did we get all entries';
 
 ok $dh.seek(0), 'did the seekdir work';
