@@ -4,6 +4,7 @@ Revision history for DirHandle
     - Bump dependency on opendir for 2024.12 Rakudo release
     - Add sponsor button
     - Add separate CI badge for each OS
+    - Modernize pod
     - Update copyright year
 
 0.0.8  2023-08-07T18:55:33+02:00

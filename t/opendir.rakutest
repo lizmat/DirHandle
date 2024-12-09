@@ -1,3 +1,4 @@
+use v6.c;  # MUST BE SPECIFIED to allow $_ being set by .read(Mu)
 use Test;
 use DirHandle;
 
