@@ -6,7 +6,7 @@
   "build-depends": [
   ],
   "depends": [
-    "P5opendir:ver<0.0.8>:auth<zef:lizmat>"
+    "P5opendir:ver<0.0.9+>:auth<zef:lizmat>"
   ],
   "description": "Raku port of Perl's DirHandle",
   "license": "Artistic-2.0",

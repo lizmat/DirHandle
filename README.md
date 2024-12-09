@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/lizmat/DirHandle/workflows/test/badge.svg)](https://github.com/lizmat/DirHandle/actions)
+[![Actions Status](https://github.com/lizmat/DirHandle/actions/workflows/linux.yml/badge.svg)](https://github.com/lizmat/DirHandle/actions) [![Actions Status](https://github.com/lizmat/DirHandle/actions/workflows/macos.yml/badge.svg)](https://github.com/lizmat/DirHandle/actions) [![Actions Status](https://github.com/lizmat/DirHandle/actions/workflows/windows.yml/badge.svg)](https://github.com/lizmat/DirHandle/actions)
 
 NAME
 ====
@@ -8,13 +8,15 @@ Raku port of Perl's DirHandle module
 SYNOPSIS
 ========
 
-    use DirHandle;
-    with Dirhandle.new(".") -> $d {
-        while $d.read -> $entry { something($entry) }
-        $d->rewind;
-        while $d.read(Mu) { something_else($_) }
-        $d.close;
-    }
+```raku
+use DirHandle;
+with Dirhandle.new(".") -> $d {
+    while $d.read -> $entry { something($entry) }
+    $d->rewind;
+    while $d.read(Mu) { something_else($_) }
+    $d.close;
+}
+```
 
 DESCRIPTION
 ===========
@@ -52,7 +54,7 @@ Source can be located at: https://github.com/lizmat/DirHandle . Comments and Pul
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018, 2019, 2020, 2021, 2023 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021, 2023, 2024 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

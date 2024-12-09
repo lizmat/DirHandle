@@ -1,6 +1,4 @@
-use v6.d;
-
-use P5opendir:ver<0.0.8>:auth<zef:lizmat>;
+use P5opendir:ver<0.0.9+>:auth<zef:lizmat>;
 
 class DirHandle {
     has $.dirhandle;
@@ -41,13 +39,17 @@ Raku port of Perl's DirHandle module
 
 =head1 SYNOPSIS
 
-    use DirHandle;
-    with Dirhandle.new(".") -> $d {
-        while $d.read -> $entry { something($entry) }
-        $d->rewind;
-        while $d.read(Mu) { something_else($_) }
-        $d.close;
-    }
+=begin code :lang<raku>
+
+use DirHandle;
+with Dirhandle.new(".") -> $d {
+    while $d.read -> $entry { something($entry) }
+    $d->rewind;
+    while $d.read(Mu) { something_else($_) }
+    $d.close;
+}
+
+=end code
 
 =head1 DESCRIPTION
 
@@ -92,7 +94,7 @@ and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018, 2019, 2020, 2021, 2023 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021, 2023, 2024 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
