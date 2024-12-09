@@ -1,6 +1,8 @@
 Revision history for DirHandle
 
 {{$NEXT}}
+
+0.0.9  2024-12-09T20:40:35+01:00
     - Bump dependency on opendir for 2024.12 Rakudo release
     - Add sponsor button
     - Add separate CI badge for each OS
