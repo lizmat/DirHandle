@@ -4,8 +4,13 @@ use DirHandle;
 
 plan 11;
 
-my $dir = $?FILE.IO.parent.IO.absolute;
+my $dir = $?FILE.IO.parent.absolute;
 my $dh = DirHandle.new($dir);
+unless $dh {
+    skip-rest "Could not open our own directory: $dir ($!)";
+    exit;
+}
+
 is $dh.^name, 'DirHandle', 'did we get a DirHandle';
 is $dh.tell, 0, 'did the tell work';
 is ~$dh, $dir, 'does it stringify correctly';
