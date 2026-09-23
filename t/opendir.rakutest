@@ -1,8 +1,7 @@
-use v6.c;  # MUST BE SPECIFIED to allow $_ being set by .read(Mu)
 use Test;
 use DirHandle;
 
-plan 11;
+plan 13;
 
 my $dir = $?FILE.IO.parent.absolute;
 my $dh = DirHandle.new($dir);
@@ -34,5 +33,10 @@ is @entries.sort, $expected, 'did we get all entries';
 
 is $dh.tell, 4, 'did the telldir work';
 ok $dh.close, 'did the closedir work';
+
+$dh = DirHandle.open($dir);
+isa-ok $dh, DirHandle;
+$dh = $dh.open($dir);
+isa-ok $dh, DirHandle;
 
 # vim: expandtab shiftwidth=4

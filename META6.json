@@ -5,19 +5,28 @@
   ],
   "build-depends": [
   ],
-  "depends": [
-    "P5opendir:ver<0.0.9+>:auth<zef:lizmat>"
-  ],
+  "depends": {
+    "runtime": {
+      "requires": [
+        "P5opendir:ver<0.0.10+>:auth<zef:lizmat>"
+      ]
+    }
+  },
   "description": "Raku port of Perl's DirHandle",
   "license": "Artistic-2.0",
   "name": "DirHandle",
-  "perl": "6.d",
   "provides": {
     "DirHandle": "lib/DirHandle.rakumod"
   },
+  "raku": "6.d",
   "resources": [
   ],
-  "source-url": "https://github.com/lizmat/DirHandle.git",
+  "source-url": "https://codeberg.org/lizmat/DirHandle.git",
+  "support": {
+    "bugtracker": "https://codeberg.org/lizmat/DirHandle/issues",
+    "email": "liz@raku.rocks",
+    "source": "https://codeberg.org/lizmat/DirHandle.git"
+  },
   "tags": [
     "UTILS",
     "CPAN5"
